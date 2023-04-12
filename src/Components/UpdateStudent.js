@@ -8,8 +8,8 @@ import TextField from '@mui/material/TextField';
 const UpdateStudent = () => {
     const [name, setName] = useState('')
     const [age, setAge] = useState('')
-    const [course, setCourse] = useState('')
-    const [batch, setBatch] = useState('')
+    const [date of joining, setCourse] = useState('')
+    const [designation, setBatch] = useState('')
     const [student, setStudent] = useContext(StudentContext)
     const { ID } = useParams();
 
@@ -18,8 +18,8 @@ const UpdateStudent = () => {
             if (data.ID === ID) {
                 setName(data.name);
                 setAge(data.age);
-                setCourse(data.course);
-                setBatch(data.batch);
+                setCourse(data.date of joining);
+                setBatch(data.designation);
             }
         })
     }, [ID, student])
@@ -27,7 +27,7 @@ const UpdateStudent = () => {
     function handleUpdate() {
         setStudent(prevStudent => prevStudent.map(
             data => data.ID === ID ? {
-                ID, name, age, batch, course
+                ID, name, age, date of joining, designation
             } : data)
         )
     }
@@ -75,14 +75,14 @@ const UpdateStudent = () => {
                     <TextField 
                         id="outlined-basic" 
                         label="Course" 
-                        value={course} 
+                        value={date of joining} 
                         onChange={(e) => setCourse(e.target.value)}
                     />
 
                     <TextField 
                         id="outlined-basic" 
                         label="Batch" 
-                        value={batch} 
+                        value={designation} 
                         onChange={(e) => setBatch(e.target.value)}
                         type="number"
                     />
